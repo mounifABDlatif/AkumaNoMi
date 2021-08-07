@@ -1,0 +1,27 @@
+<body>
+    <app-header></app-header>
+
+    <section class="col-md-12">
+        <h3 class="text-center">Description du fruits</h3>
+        <div class="text-center">
+
+
+
+            <img class="header-img" style=" width:200px;" [src]="fruit.picture" alt="">
+            <div class="card-body">
+                <h4 class="text-center">Nom : {{fruit.nom}}</h4>
+                <p class="text-center">Catégorie : {{fruit.categorie}}</p>
+                <p class="text-center">Nature : {{fruit.type}}</p>
+                <p class="text-center">Pouvoir : {{fruit.power}}</p>
+                <p class="text-center">Détenteur/trice actuel.le : {{fruit.detenteur}}</p>
+            </div>
+            <div class="buttonModif">
+                <button class="btn btn-warning" [routerLink]="['/modif',fruit.id]">Modifier</button>
+                <button class="btn btn-danger" [routerLink]="['']" (click)="supprimer()">Supprimer</button>
+            </div>
+
+        </div>
+
+
+    </section>
+</body>

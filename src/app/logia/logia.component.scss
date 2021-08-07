@@ -1,0 +1,19 @@
+.card:hover{
+    margin-top:-20px!important;
+    background-color: rgba(155, 111, 30, 0.411);
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(207, 136, 65);
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 22px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.363);
+    background: rgb(121,99,9);
+    background: linear-gradient(90deg, rgba(121,99,9,0.36785136417848385) 34%, rgba(0,229,255,0.1913807759431898) 100%);
+}
+
+button{
+    background-image: linear-gradient(to right top, #7c3a09, #935324, #ab6d3d, #c28757, #d9a273);
+}

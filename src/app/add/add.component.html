@@ -1,0 +1,76 @@
+<app-header></app-header>
+
+<div class="container">
+
+    <div class="text-center">
+        <h1>Ajoutez un fruit</h1>
+    </div>
+
+    <div *ngIf="fruit.picture" class="d-flex">
+        <img [src]="fruit.picture" class="card-img-top" style="width: 200px;" alt="...">
+    </div>
+
+    <div class="card addform">
+        <div class="card-body ">
+            <form *ngIf="fruit" (ngSubmit)="onSubmit(addf)" #addf="ngForm">
+
+                <div class="form-group">
+                    <label for="name">Id *</label>
+                    <input type="text" class="form-control" id="id" [(ngModel)]="fruit.id" name="id" #name="ngModel">
+                    <div [hidden]="name.valid || name.pristine" class="card-panel red accent-1">
+                        L'id du fruit est obligatoir *.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Nom *</label>
+                    <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+                        [(ngModel)]="fruit.nom" name="name" #name="ngModel">
+
+                    <div [hidden]="name.valid || name.pristine" class="card-panel red accent-1">
+                        Le nom du fruit est requis (1-25).
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="picture">Image du fruit :</label>
+                    <input type="url" class="form-control" id="picture" [(ngModel)]="fruit.picture" name="picture"
+                        #name="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Categorie : </label>
+                    <input type="text" class="form-control" id="types" [(ngModel)]="fruit.categorie" name="categorie"
+                        #name="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Nature : </label>
+                    <input type="text" class="form-control" id="types" [(ngModel)]="fruit.type" name="type"
+                        #name="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Description : </label>
+                    <input type="text" class="form-control" id="types" [(ngModel)]="fruit.power" name="power"
+                        #name="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Nom du détenteur : </label>
+                    <input type="text" class="form-control" id="types" [(ngModel)]="fruit.detenteur" name="detenteur"
+                        #name="ngModel">
+                </div>
+
+                <div class="divider"></div>
+                <div class="section center">
+                    <button type="submit" class="btn btn-dark" [disabled]="!addf.form.valid">
+                        Valider</button>
+                </div>
+            </form>
+
+            <button class="btn btn-secondary" [routerLink]="['/description',fruit.id]">Annuler l'ajout</button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+<body>
+
+<app-header></app-header>
+
+    <main class="container">
+
+        <section class="col-md-12">
+            <h3 class="text-center">Vous trouverez ici Un descriptif des fruits du démon apparus dans le manga</h3>
+            <div class="row mt-3">
+
+                <div class="card col-md-2 mt-2" *ngFor="let fruit of fruits">
+                    <a>
+                        <h3 class="text-center"><img class="header-img" style="width:100px;" [src]="fruit.picture" alt=""></h3>
+                        <div class="card-body">
+                            <h6 class="text-center">{{fruit.nom}}</h6>
+                            <p class="text-center js">{{fruit.categorie}}</p>
+                            <p class="text-center">{{fruit.type}}</p>
+                            <p class="text-center">{{fruit.detenteur}}</p>
+                            <button class="btn btn-light" [routerLink]="['description',fruit.id]">Description</button>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+</body>
