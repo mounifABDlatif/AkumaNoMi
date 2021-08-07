@@ -144,7 +144,7 @@ export const FRUITS: Fruit[] = [
         type: 'Smile',
         power: 'il permet de se transformer en un dragon oriental.',
         picture: 'assets/16.jpg',
-        detenteur: 'Momonosuké Kozuki',
+        detenteur: 'Momonosuké Kozukii',
     },
     {
         id: 17,
